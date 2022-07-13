@@ -4,7 +4,7 @@
     <title>Machine Learning Learning Lab 2: Feature Engineering</title>
     <meta charset="utf-8" />
     <meta name="author" content="Dr. Joshua Rosenberg" />
-    <meta name="date" content="2022-07-12" />
+    <meta name="date" content="2022-07-13" />
     <script src="libs/header-attrs-2.14/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
@@ -38,10 +38,79 @@ class: clear, title-slide, inverse, center, top, middle
 # Machine Learning Learning Lab 2: Feature Engineering
 ----
 ### **Dr. Joshua Rosenberg**
-### July 12, 2022
+### July 13, 2022
 
 ---
 
+# Happy Wednesday
+
+.panelset[
+
+.panel[.panel-name[Recap]
+
+- We have _four learning labs_ within the _machine learning topic area_
+    - Each is associated with ne badge
+- We began with _supervised machine learning_ and focused on its **predictive** emphasis
+    - We talked a bit about plans for using ML
+    - We worked through a presentation (reflection: the code-along took to long)
+    - We started on the case study
+    
+]
+
+.panel[.panel-name[A few more thoughts]
+
+- If you are still figuring out how you are planning to use ML . . . 
+    - Great! Let's make progress today (and this week)
+- If you have a _specific use of ML in mind_ . . . 
+    - Make sense of the labs
+    - And, at the same time, begin to look for _how_ you can achieve your goal
+        - R packages (recently updated, with good documentation, with active users, compatibility, papers)
+- Machine learning is _not_ magical
+
+]
+
+.panel[.panel-name[Logistics]
+
+- Links to presentations are here: https://laser-institute.github.io/machine-learning
+    - And in the machine learning "team": https://github.com/orgs/laser-institute/teams/machine-learning
+- GitHub will probably continue to work, but be challenging (but should be less so)
+    - You'll need to fork the repository to "submit" your badge; you can do this at any time (through GitHub.com or GitHub Desktop)
+- Installation of required packages will continue to work, but may be challenging (but should be less so)
+
+]
+
+.panel[.panel-name[Plan for today]
+
+- **This morning**
+    - We'll spend the first _30 minutes_ of our 75 minutes working through the case study and badge activity
+    - Then, we'll start the presentation for learning lab #2
+- **This afternoon**
+    - We'll spend the first _10-20 minutes_ finishing the presentation for learning lab #1
+    - Then, you'll have time to _continue the case study and badge activity for learning lab #1_
+        - Or, you can move on to the case study and badge activity for learning lab #2
+]
+]
+
+---
+
+# Brief (15-20 seconds each) reflection
+
+
+.pull-left[
+### Turn to an elbow partner and discuss:
+
+- Any additional thoughts on the following?
+    - Which modality (supervised or unsupervised machine learning) are you interested in using?
+    - What data or context are you interested in for your use of ML?
+]
+
+.pull-right[
+
+&lt;img src="img/joro-pointing.jpeg" width="75%" /&gt;
+
+]
+
+---
 # Background
 
 - In the last learning lab, we did a nice job of training a model that was _pretty good_
@@ -110,7 +179,7 @@ class: clear, inverse, center, middle
 
 Let's take a look at the variable
 
-![](ll-2-overview-presentation_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
+![](ll-2-overview-presentation_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
 
 ---
 
@@ -143,7 +212,7 @@ Here's a time stamp:
 
 
 ```
-## [1] "2022-07-12 09:27:51 EDT"
+## [1] "2022-07-13 09:52:01 EDT"
 ```
 
 **How could this variable be used as a predictor variable?**
@@ -162,9 +231,7 @@ Here's a time stamp:
 
 .pull-right[
 
-&lt;img src="img/joro-cycle.jpeg" width="75%" /&gt;
-
-]
+&lt;img src="img/joro-pointing.jpeg" width="75%" /&gt;
 
 ---
 
@@ -275,18 +342,18 @@ Say we have a data set, `d`, with 100 observations (rows or data points) with _k
 
 ```
 ## # A tibble: 100 × 3
-##       id  var_a  var_b
-##    &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;
-##  1     1 0.375  0.0263
-##  2     2 0.156  0.267 
-##  3     3 0.204  0.172 
-##  4     4 0.104  0.238 
-##  5     5 0.0806 0.760 
-##  6     6 0.539  0.426 
-##  7     7 0.701  0.985 
-##  8     8 0.237  0.406 
-##  9     9 0.216  0.159 
-## 10    10 0.865  0.0728
+##       id  var_a var_b
+##    &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt;
+##  1     1 0.0224 0.383
+##  2     2 0.236  0.381
+##  3     3 0.527  0.868
+##  4     4 0.329  0.846
+##  5     5 0.588  0.917
+##  6     6 0.518  0.811
+##  7     7 0.963  0.974
+##  8     8 0.732  0.311
+##  9     9 0.775  0.398
+## 10    10 0.142  0.206
 ## # … with 90 more rows
 ```
 
@@ -299,20 +366,20 @@ Say we have a data set, `d`, with 100 observations (rows or data points) with _k
 
 ```
 ## # A tibble: 3 × 3
-##      id var_a  var_b
-##   &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt;
-## 1     1 0.375 0.0263
-## 2     2 0.156 0.267 
-## 3     3 0.204 0.172
+##      id  var_a var_b
+##   &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt;
+## 1     1 0.0224 0.383
+## 2     2 0.236  0.381
+## 3     3 0.527  0.868
 ```
 
 ```
 ## # A tibble: 3 × 3
 ##      id var_a var_b
 ##   &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
-## 1    91 0.538 0.226
-## 2    92 0.839 0.862
-## 3    93 0.396 0.295
+## 1    91 0.780 0.483
+## 2    92 0.624 0.670
+## 3    93 0.718 0.494
 ```
 
 ---
@@ -322,20 +389,20 @@ Say we have a data set, `d`, with 100 observations (rows or data points) with _k
 
 ```
 ## # A tibble: 3 × 3
-##      id var_a  var_b
-##   &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt;
-## 1     1 0.375 0.0263
-## 2     2 0.156 0.267 
-## 3     3 0.204 0.172
+##      id  var_a var_b
+##   &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt;
+## 1     1 0.0224 0.383
+## 2     2 0.236  0.381
+## 3     3 0.527  0.868
 ```
 
 ```
 ## # A tibble: 3 × 3
-##      id var_a var_b
-##   &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
-## 1    81 0.491 0.455
-## 2    82 0.299 0.601
-## 3    83 0.818 0.702
+##      id var_a  var_b
+##   &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt;
+## 1    81 0.416 0.0451
+## 2    82 0.954 0.993 
+## 3    83 0.385 0.120
 ```
 
 ---
@@ -345,20 +412,20 @@ Say we have a data set, `d`, with 100 observations (rows or data points) with _k
 
 ```
 ## # A tibble: 3 × 3
-##      id var_a  var_b
-##   &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt;
-## 1     1 0.375 0.0263
-## 2     2 0.156 0.267 
-## 3     3 0.204 0.172
+##      id  var_a var_b
+##   &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt;
+## 1     1 0.0224 0.383
+## 2     2 0.236  0.381
+## 3     3 0.527  0.868
 ```
 
 ```
 ## # A tibble: 3 × 3
-##      id var_a  var_b
-##   &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt;
-## 1    71 0.441 0.0448
-## 2    72 0.929 0.266 
-## 3    73 0.402 0.381
+##      id var_a var_b
+##   &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1    71 0.753 0.630
+## 2    72 0.268 0.245
+## 3    73 0.636 0.894
 ```
 
 ... through the tenth resampling, after which the fit measures are simply summed
