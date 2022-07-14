@@ -23,11 +23,11 @@ Part A:
 
 1.  Like we considered after LL1, how good was the machine learning model we developed in the case study? Stepping back, how successful is this as a predictive model of students' success in the class using data collected through roughly the first one month of the class? How might this model be used in practice?
 
--   The model seemed fairly predictive. 
+-   The model seemed fairly predictive. It does better near where most students get their final grade. This makes sense based on how the model is trained with less data outside this area. It could be used as an alarm for students more at risk of getting a low final grade. 
 
 3.  Would you be comfortable using this? What if you read about someone using such a model as a reviewer of research. Please add your thoughts and reflections following the bullet point below.
 
--   Yes.
+-   Yes.I would use it in my own classroom. As research, probably not. 
 
 3.  How might the model be improved? Share any ideas you have at this time below:
 
