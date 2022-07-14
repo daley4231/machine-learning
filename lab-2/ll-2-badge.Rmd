@@ -59,6 +59,7 @@ library(here)
 library(tidymodels)
 
 d <- read_csv("data/online-sci-data-joined.csv")
+d <- d%>% distince(student_id, course_id, .keep)
 
 set.seed(20220712)
 
