@@ -1,6 +1,6 @@
 ---
 title: 'Machine Learning - Learning Lab 2 Badge'
-author: ""
+author: "Michael Daley"
 date: "`r format(Sys.Date(),'%B %e, %Y')`"
 output: html_document
 ---
