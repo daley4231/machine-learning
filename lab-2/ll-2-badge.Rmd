@@ -59,7 +59,15 @@ library(here)
 library(tidymodels)
 
 d <- read_csv("data/online-sci-data-joined.csv")
-d <- d%>% distince(student_id, course_id, .keep)
+
+d <- d%>% distinct(student_id, course_id, .keep_all=TRUE)
+
+data_with_final_grade <- read_csv("data/data-to-model-no-gradebook.csv")
+data_with_final_grade <- data_with_final_grade%>%
+    select(student_id, course_id, final_grade)
+
+d <- left_join(d, data_with_final_grade)
+
 
 set.seed(20220712)
 
